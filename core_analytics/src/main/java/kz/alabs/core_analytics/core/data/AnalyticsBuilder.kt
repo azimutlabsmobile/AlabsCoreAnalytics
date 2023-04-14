@@ -6,14 +6,14 @@ import kz.alabs.core_analytics.core.domain.AnalyticsAdapter
 
 class Analytics private constructor(builder: Builder) {
 
-    var adapters: List<AnalyticsAdapter>? = null
+    var adapters: List<AnalyticsAdapter> = emptyList()
 
     class Builder(private val app: Application) {
 
-        private val adapters: MutableList<AnalyticsAdapter>? = null
+        private val adapters: MutableList<AnalyticsAdapter> = mutableListOf()
 
         fun registerAppMetricaAdapter(apiKey: String) = apply {
-            adapters?.add(createAppMetricaAdapter(apiKey))
+            adapters.add(createAppMetricaAdapter(apiKey))
         }
 
         private fun createAppMetricaAdapter(apiKey: String) =
@@ -21,7 +21,7 @@ class Analytics private constructor(builder: Builder) {
 
         fun build() = Analytics(this)
 
-        fun getAdapters(): List<AnalyticsAdapter> = adapters.orEmpty()
+        fun getAdapters(): List<AnalyticsAdapter> = adapters
     }
 
     init {
