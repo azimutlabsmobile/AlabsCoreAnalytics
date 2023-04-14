@@ -11,6 +11,7 @@ class AppMetricaAdapter private constructor(
 
     init {
         metric.activate(apiKey)
+        metric.enableActivityAutoTracking()
     }
 
     override fun sendEvent(eventName: String, parameter: Map<String, Any>) {
