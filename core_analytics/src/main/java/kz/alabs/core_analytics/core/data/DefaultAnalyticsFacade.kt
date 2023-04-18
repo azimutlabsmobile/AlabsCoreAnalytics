@@ -16,6 +16,14 @@ class DefaultAnalyticsFacade : AnalyticsFacade {
         }
     }
 
+    override fun sendEvent(eventName: String) {
+        adapters.forEach {
+            it.sendEvent(
+                eventName = eventName
+            )
+        }
+    }
+
     override fun registerAdapters(adapters: List<AnalyticsAdapter>) {
         this.adapters = adapters
     }

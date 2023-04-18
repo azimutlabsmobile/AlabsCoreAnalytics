@@ -14,6 +14,10 @@ class DefaultAppMetricaAnalytics(private val app: Application) : AppMetricaAnaly
     override fun sendEvent(eventName: String, params: Map<String, Any>) =
         YandexMetrica.reportEvent(eventName, params)
 
+    override fun sendEvent(eventName: String) {
+        YandexMetrica.reportEvent(eventName)
+    }
+
     override fun enableActivityAutoTracking() = YandexMetrica.enableActivityAutoTracking(app)
 
 }

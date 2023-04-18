@@ -18,6 +18,10 @@ class AppMetricaAdapter private constructor(
         metric.sendEvent(eventName = eventName, params = parameter)
     }
 
+    override fun sendEvent(eventName: String) {
+        metric.sendEvent(eventName = eventName)
+    }
+
     class Builder(
         application: Application,
         private val apiKey: String,

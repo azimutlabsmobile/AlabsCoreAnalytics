@@ -6,6 +6,8 @@ interface AppMetricaAnalytics {
 
     fun sendEvent(eventName: String, params: Map<String, Any>)
 
+    fun sendEvent(eventName: String)
+
     fun enableActivityAutoTracking()
 
 }

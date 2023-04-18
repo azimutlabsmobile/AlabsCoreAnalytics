@@ -6,5 +6,7 @@ interface AnalyticsFacade {
         parametersMap: Map<String, Any>?
     )
 
+    fun sendEvent(eventName: String)
+
     fun registerAdapters(adapters: List<AnalyticsAdapter>)
 }
