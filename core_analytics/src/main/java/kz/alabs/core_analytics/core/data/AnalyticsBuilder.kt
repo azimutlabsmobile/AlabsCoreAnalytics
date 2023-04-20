@@ -17,7 +17,7 @@ class Analytics private constructor(builder: Builder) {
             adapters.add(createAppMetricaAdapter(apiKey))
         }
 
-        fun registerFirebaseAdapter(apiKey: String) = apply {
+        fun registerFirebaseAdapter() = apply {
             adapters.add(createFirebaseAdapter())
         }
 
