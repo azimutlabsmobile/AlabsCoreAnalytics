@@ -15,8 +15,10 @@ First you need to add this line in your gradle file
 implementation 'com.github.azimutlabsmobile:AlabsCoreAnalytics:1.0'
 ```
 After that we need to specify wich metrics we want to use
-``` kotlin
 
+## Example
+First of all we create our builder to add necessary adapters
+``` kotlin
 //Creating our builder
 val builder = Analytics.Builder(app)
   .registerFirebaseAdapter() //registering firebase
